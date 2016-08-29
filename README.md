@@ -16,14 +16,14 @@ where each file contains a sequence of JSON records:
 
 You can use this tool to export some fields from all JSON records that satisfies certain condition as CSV file. For example if each JSON record has following format:
 
-```json
+```
 {
-  "username": "David"
+  "username": "David",
   "event": {
-    "time": "2016/12/10 23:30"
-    "name": "some event"
+    "time": "2016/12/10 23:30",
+    "name": "some event",
     ...
-  }
+  },
   ...
 }
 ```
