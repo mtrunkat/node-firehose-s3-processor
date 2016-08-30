@@ -16,7 +16,7 @@ program
   .option('-f, --date-from [string]', 'From date [2016-04-01]')
   .option('-t, --date-to [string]', 'To date [2016-04-02]')
   .option('-F, --fields [string]', 'Fields to be extracted [name,date,search.query]')
-  .option('-C, --conditions [string]', 'Conditions [name=John,gl=uk]')
+  .option('-C, --conditions [string]', 'Conditions [name=John,gl=uk]', '')
   .option('-p, --pool [integer]', 'Number of parallel files processed [20]', 20)
   .option('-o, --out [string]', 'Output file name [output.csv]', 'output.csv')
   .parse(process.argv);
@@ -25,8 +25,6 @@ if (!program.dateFrom) throw '--date-from parameter required';
 if (!program.dateTo) throw '--date-to parameter required';
 if (!program.fields) throw '--fields parameter required';
 if (!program.args[0]) throw '<bucket> argument required';
-
-program.conditions = program.conditions || '';
 
 const bucket = program.args[0];
 const fields = configParser.parseFields(program.fields);
